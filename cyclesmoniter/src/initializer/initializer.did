@@ -1,0 +1,6 @@
+service : {
+  run_topup          : () -> (variant { ok : null; err : text });
+  last_balance_e8s   : () -> (opt nat64) query;
+  next_check_utc_ns  : () -> (nat64) query;
+  refresh_neuron     : () -> (opt blob);
+}

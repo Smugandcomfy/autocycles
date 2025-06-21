@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "dfx": "0.17.0",
+  "canisters": {
+    "initializer": {
+      "type": "motoko",
+      "main": "src/initializer",
+      "candid": "src/initializer/initializer.did"
+    },
+    "frontend": {
+      "type": "assets",
+      "main": "src/frontend/dist",
+      "dependencies": ["initializer"]
+    }
+  },
+  "defaults": { "build": { "packtool": "vessel" } },
+  "networks": {
+    "ic":    { "providers": ["https://boundary.ic0.app/"] },
+    "local": { "bind": "127.0.0.1:8000", "type": "ephemeral" }
+  }
+}
